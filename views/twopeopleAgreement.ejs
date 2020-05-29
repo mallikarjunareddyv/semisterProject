@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Corporate Service Offices</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/release/v5.6.3/css/all.css">
+  <!--  integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2FD33n5SdQ81WUE00s/" -->
+  <style>
+    body{
+      background: #dedede;
+      font-family: Arial;
+      margin: 0;
+      padding: 0;
+    }
+    .dropdown{
+      margin: 0 auto;
+    }
+    nav{
+      height: 160px;
+      background:rgba(10,15,56,0.9);
+      box-shadow: 0 10px 15px rgba(0, 0,0,0.1)
+    }
+    .logo{
+      padding: 5px 0 0 80px;
+      width: 350px;
+      height: 130px;
+    }
+    nav ul{
+      padding: 0;
+      margin:0;
+      float: right;
+       margin-right: 180px;
+    }
+    nav ul li{
+      background: #2c3e50;
+      position: relative;
+      list-style: none;
+      display: inline-block;
+    }
+    nav ul li a{
+      display: block;
+      padding: 0 9px;
+      color: white;
+      text-decoration: none;
+      line-height: 60px;
+      /* margin-top: 40px; */
+      font-size:20px;
+    }
+    nav ul li a:hover{
+      background: #243342;
+    }
+    nav ul ul{
+      position: absolute;
+      top: 60px;
+      display: none;
+    }
+    nav ul li:hover > ul{
+      display: block;
+    }
+    nav ul ul li{
+      width: 150px;
+      float: none;
+      display: list-item;
+      position: relative;
+    }
+    * {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.applyBtn{
+    margin-left:300px;
+    text-decoration-line: unset;
+
+}
+  </style>
+</head>  
+<body>
+  <div class="dropdown">
+    <nav>
+      <img src="http://www.csocarlton.com.au/wp-content/uploads/2017/05/cropped-cso-carlton-logo-navy1_whitetextonly.png" class="logo">
+      <ul>
+        <li>
+          <a href="/dashboard">Home</a>
+        </li>
+        <li>
+          <a href="/aboutUs">About Us</a>
+        </li>
+        <li>
+           <a href="/leaseAgreement">Apply Here</a>
+        </li>
+        <li>
+          <a href="">Our Offices</a>
+          <ul>
+              <li><a href="/twopeople"><span style='font-size:20px;'>&#8804;</span>Two People</a></li>
+              <li><a href="/threepeople"><span style='font-size:20px;'>&#8804;</span>Three People</a></li>
+              <li><a href="/fourpeople"><span style='font-size:20px;'>&#8804;</span>Four People</a></li>
+          </ul>
+        </li>
+        <li>
+            <a href="/logout">Logout</a>
+          </li>
+      </ul>
+    </nav>
+  </div>
+  <!-- Images to apply leaseagreement -->
+
+  <form action="/twopeople" style="background:white;">
+  <div class="row">
+    <div class="column" style="margin-left:0px;">
+        <h2><span style='font-size:20px; color: #272727; font-family:Josefin Sans,sans-serif;'>&#8804;</span>&nbsp; Two People</h2>        
+        <h2 style="color: #272727; font-family:Josefin Sans,sans-serif;">Offices 6 & 7</h2> 
+        <p>At 9m2 and 7m2, these are two internal offices fitted with glass partitions, and most appropriate for one or two people</p>       
+        <h3>Fully Serviced</h3>
+        <p>
+                These spaces are available under our serviced office agreement. At CSO Carlton, our goal is to help businesses customise an office solution that caters to their specific administrative and executive service needs. To ensure that each individual and business achieves a cost-effective solution, CSO Carlton supports our tenants with a standard universal service offering, and allows clients to tailor any further services to meet their needs as required.
+        </p>
+        <p>Included in each of our serviced office agreements are;</p>
+        <ul>
+            <li> A dedicated receptionist, on site, 9am – 4pm, who will:<br>
+            <ul><br>
+                <li>Greet your colleagues or customers</li><br>
+                <li>Receive your deliveries – mail, parcels, etc</li><br>
+                <li>Book travel, accommodation, restaurants and meetings</li><br>
+                <li>Arrange taxis, couriers, etc</li>
+            </ul>
+            </li>
+        </ul>
+        <h3>Tailored Administrative Support</h3>
+        <p>Take advantage of our additional service capabilities with these services offered on a fee schedule:</p>
+    <ul>    <br>
+        <li>Desk phone (landline) with dedicated phone number and message bank</li><br>
+        <li>Pay as you need office services including word processing, presentation preparation and printing, document scanning.</li><br>
+        <li>Additional ergonomic furniture (shelving, stand-up desks, whiteboards, small meeting tables).</li><br>
+        <li>Catering services from local eateries and cafés.</li>
+    </ul>  
+    </div>
+    <div class="column">
+      <img src="http://www.csocarlton.com.au/wp-content/uploads/2017/07/Suite-6.jpeg" width="500px';" height="350px;" style="margin-left:70px;">
+    </div>
+    <div class="column">
+      <img src="http://www.csocarlton.com.au/wp-content/uploads/2017/07/suite-6-2.jpeg" width="500px';" height="350px;" style="margin-right:-40px;">
+    </div>
+  </div></form>
+  </body>
+  </html>

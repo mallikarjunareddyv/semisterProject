@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Corporate Serviced Offices</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/release/v5.6.3/css/all.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--  integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2FD33n5SdQ81WUE00s/" -->
+  <style>
+    body{
+      background: #dedede;
+      font-family: Arial;
+      margin: 0;
+      padding: 0;
+    }
+    .dropdown{
+      margin: 0 auto;
+    }
+    nav{
+      height: 160px;
+      background: rgba(10,15,56,0.9);
+      /* background: #2c3e50; */
+      box-shadow: 0 10px 15px rgba(0, 0,0,0.1)
+    }
+    .logo{
+      /* padding: 5px 0 0 80px; */
+      width: 350px;
+      height: 130px;
+      margin-left: 690px;
+    }
+  </style>
+</head>  
+<body>
+  <div class="dropdown">
+    <nav>
+      <img src="http://www.csocarlton.com.au/wp-content/uploads/2017/05/cropped-cso-carlton-logo-navy1_whitetextonly.png" class="logo">
+      
+    </nav>
+  </div>
+  <div class="row h-100 align-items-center">
+        <div class="col md-6 offset-md-3" style="width:500px; margin-left:680px; background-color:white; margin-top:15px; padding:20px;">
+<h3>Login Here</h3>
+  <br>
+<!-- <div style="margin:0 auto;" class=".col-12 colmd-6 col-lg-5 p-5 customborder"></div> -->
+<form action="/login" method="POST" autocomplete="off">
+    <% if (success_message != '') {%>
+        <div class="alert alert-dismissible alert-danger">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong><%= success_message %></strong>
+          </div>
+    <%}%>
+    <% if(error != '') {%>
+        <div class="alert alert-dismissible alert-danger">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            <strong><%= error%></strong> 
+          </div>
+    <%}%>
+<!-- <input type="hidden" name="_id" value="{{employeeDetails._id}}"> -->
+<div class="form-group">
+        <label for="email">Enter Your Email</label>
+        <input type="email" class="form-control" name="email" id="email" placeholder="Email" autocomplete="off" value="<%= typeof email != 'undefined' ? email : '' %>">
+    </div>  
+        <div class="form-group">
+            <label for="password">Enter Your Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password" id="password" autocomplete="off">
+        </div>
+        
+            <!--submit the form-->
+            <div class="form-group" >
+                <input type="submit" class="btn btn-block btn-outline-primary" style="background-color:brown; color:white;" value="Login">
+            </div>
+            <p> New Here?<a class="card-link" href="/">Register Here</a></p>
+        </form>
+            </div>
+        </div>
+        
+    </body>
+    </html>
