@@ -25,5 +25,13 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mallikarjunareddyv/semisterProject.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mallikarjunareddyv/semisterProject/issues"
+  },
+  "homepage": "https://github.com/mallikarjunareddyv/semisterProject#readme"
 }
