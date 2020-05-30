@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const url ="mongodb://localhost:27017/EmployeeDB";
+const url ="mongodb://heroku_lz2jfff7:c2jaagajoves3ci2o5sjjmtvrt@ds135456.mlab.com:35456/heroku_lz2jfff7";
 
 //connect to db
 
