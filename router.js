@@ -169,7 +169,7 @@ routes.get('/fourpeople',(req,res)=>{
 routes.get('/aboutUs',(req,res)=>{
     res.render('aboutUs');
 });
-router.get('/successPage',(req,res)=>{
+routes.get('/successPage',(req,res)=>{
     var {agreementDate,startDate,companyName,street,state,furnitureName,agreementNo,postCode,totalMonthlyRate} =req.body;
     if(!agreementDate || !startDate || !companyName || !street ||!state || !agreementNo || !postCode || !furnitureName ||!totalMonthlyRate){
         err = "Please Fill All The Details...";
