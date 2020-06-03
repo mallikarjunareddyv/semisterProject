@@ -2,7 +2,6 @@
 <html>
 <head>
   <title>Corporate Serviced Offices</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/release/v5.6.3/css/all.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -12,47 +11,86 @@
       background: #dedede;
       font-family: Arial;
       margin: 0;
+      overflow-x: hidden;
       padding: 0;
-      overflow: hidden;
     }
     .dropdown{
       margin: 0 auto;
     }
     nav{
-      height: 100px;
+      height: 120px;
       background: rgba(10,15,56,0.9);
+      /* background: #2c3e50; */
       box-shadow: 0 10px 15px rgba(0, 0,0,0.1)
     }
-    .logo {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 25%;
-}
+    .logo{
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 25%;
+    }
+    .wrap{
+      max-width: 350px;
+      border-radius: 20px;
+      margin: auto;
+      background: rgba(0, 0,0,0.8);
+      box-sizing: border-box;
+      padding: 20px;
+      color: #fff;
+      margin-top: 100px;
+    }
+    h2{
+      text-align: center;
+    }
+    input[type=text],input[type=email],input[type=password]{
+      width: 100%;
+      box-sizing: border-box;
+      padding: 12px 5px;
+      background: rgba(0,0,0,0.10);
+      outline: none;
+      border: none;
+      border-bottom: 1px dotted #fff;
+      color:#fff;
+      border-radius: 5px;
+      font-weight: bold;
+      margin: 5px;
+    }
+    input[type=submit]{
+      width:100%;
+      box-sizing: border-box;
+      padding: 10px 0;
+      margin-top: 30px;
+      outline: none;
+      border: none;
+      background: #60adde;
+      opacity: 0.7;
+      border-radius: 20px;
+      font-size: 20px;
+      color:#fff;
+    }
+    input[type=submit]:hover{
+      background: #003366;
+      opacity: 0.7;
+    }
   </style>
 </head>  
 <body>
   <div class="dropdown">
     <nav>
       <img src="http://www.csocarlton.com.au/wp-content/uploads/2017/05/cropped-cso-carlton-logo-navy1_whitetextonly.png" class="logo">
-      
     </nav>
-  </div>
-  <div class="row h-100 align-items-center">
-        <div class="col md-6 offset-md-3" style="width:500px; margin-left:450px; background-color:white; margin-top:15px; padding:20px;">
-  <h3>Register Yourself</h3>
-  <br>
-<!-- <div style="margin:0 auto;" class=".col-12 colmd-6 col-lg-5 p-5 customborder"></div> -->
-
+ </div>
+ <div class="wrap">
+   <h2 style="color:royalblue;">Sign Up Here</h2>
+<br>
 <% if(typeof err != 'undefined') {%>
-    <div class="alert alert-dismissible alert-danger">
-        <button type="button" class="close" data-dismiss="alert">&times;</button>
-        <strong><%= err %></strong> 
-      </div>
+  <div class="alert alert-dismissible alert-danger">
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
+      <strong><%= err %></strong> 
+    </div>
 <%}%>
-<form action="/register" method="POST" autocomplete="off">
-<!-- <input type="hidden" name="_id" value="{{employeeDetails._id}}"> -->
-<div class="form-group">
+  <form action="/register" method="POST" autocomplete="off">
+  <div class="form-group">
     <label for="email">Enter Your Email</label>
     <input type="email" class="form-control" name="email" id="email" placeholder="Email" autocomplete="off" value="<%= typeof email != 'undefined' ? email : '' %>">
 </div>    
@@ -66,16 +104,15 @@
     </div>
     <div class="form-group">
         <label for="confirmpassword">Confirm Your Password</label>
-        <input type="password" class="form-control" name="confirmpassword" placeholder="Password" id="confirmpassword" autocomplete="off">
+        <input type="password" class="form-control" name="confirmpassword" placeholder="Confirm Password" id="confirmpassword" autocomplete="off">
     </div>
         <!--submit the form-->
         <div class="form-group" >
-            <input type="submit" class="btn btn-block btn-outline-primary" style="background-color:brown; color:white;" value="Register">
+            <input type="submit" value="Register">
         </div>
     <p> Already Registered ?<a class="card-link" href="/login">Login Here</a></p>
-    </form>
-        </div>
-    </div>
 
- </body>
- </html>
+  </form>
+ </div>
+ </body>        
+</html>
