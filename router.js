@@ -10,7 +10,7 @@ const bcrypt = require('bcryptjs');
 
 const bodyParser = require('body-parser');
 
-const leaseAgreement = mongoose.model('LeaseAgreement');
+const leaseAgreement = mongoose.model('Agreement');
 
 const user = mongoose.model('User');
 
@@ -43,11 +43,6 @@ routes.use(function(req,res,next){
      next();
 });
 
-mongoose.connect('mongodb://localhost:27017/EmployeeDB',{
-    useNewUrlParser:true,
-    useUnifiedTopology:true
-}).then(()=>console.log("Database Connected"));
-
 routes.get('/',(req,res)=>{
     res.render('index');
 });
@@ -68,7 +63,6 @@ routes.post('/register',(req,res)=>{
         user.findOne({ email :email }, function(err,data){
             if(err)throw err;
             if(data){
-                console.log("User Exits");
                 err = "User Already Exists with This Email...";
                 res.render('index',{'err': err,'email' : email, 'username' : username});
             }else{
@@ -83,7 +77,7 @@ routes.post('/register',(req,res)=>{
                             password
                         }).save((err,data)=>{
                             if(err)throw err;
-                            req.flash('success_message','Registered Successfull...Login To Continue..');
+                            req.flash('success_message','Registered Successfully...Login To Continue..');
                             res.redirect('/login');
                         });
                     });
@@ -91,6 +85,46 @@ routes.post('/register',(req,res)=>{
             }
         });
     }
+});
+
+routes.post('/agreement',(req,res)=>{
+    var LeaseAgree = new leaseAgreement();
+
+    LeaseAgree.fullName = req.body.fullName;
+
+    LeaseAgree.email    = req.body.email;
+
+    LeaseAgree.address   = req.body.address;
+
+    LeaseAgree.city     = req.body.city;
+
+    LeaseAgree.State     = req.body.State;
+
+    LeaseAgree.zip     = req.body.zip;
+
+    LeaseAgree.cardname     = req.body.cardname;
+
+    LeaseAgree.cardnumber     = req.body.cardnumber;
+
+    LeaseAgree.expmonth     = req.body.expmonth;
+
+    LeaseAgree.expyear = req.body.expyear;
+
+    LeaseAgree.cvv = req.body.cvv;
+
+     if(LeaseAgree.fullName == "" || LeaseAgree.email ==""){
+         res.render('leaseAgreement',({
+            error:'Enter All Details',
+         }));
+         return;
+     } 
+     LeaseAgree.save((err)=>{
+        if(!err){
+            res.redirect('/successPage');
+        }else{
+            console.log("an Error occured during insertion ." + err);
+        }
+    });
 });
 
 
@@ -169,18 +203,9 @@ routes.get('/fourpeople',(req,res)=>{
 routes.get('/aboutUs',(req,res)=>{
     res.render('aboutUs');
 });
+
 routes.get('/successPage',(req,res)=>{
-    var {agreementDate,startDate,companyName,street,state,furnitureName,agreementNo,postCode,totalMonthlyRate} =req.body;
-    if(!agreementDate || !startDate || !companyName || !street ||!state || !agreementNo || !postCode || !furnitureName ||!totalMonthlyRate){
-        err = "Please Fill All The Details...";
-        res.render('leaseAgreement',{'err':err});
-    }
-    if(typeof err == 'undefined'){
-            leaseAgreement.save((err,data)=>{
-                if(err) throw err;
-                res.render('successPage');
-            })
-    }
-});
+    res.render('successPage');
+})
 
 module.exports = routes;

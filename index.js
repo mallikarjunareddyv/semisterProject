@@ -26,6 +26,7 @@ app.get('/twopeople',routes);
 app.get('/threepeople',routes);
 app.get('/fourpeople',routes);
 app.get('/aboutUs',routes);
+app.post('/agreement',routes);
 app.get('/successPage',routes);
 
  const PORT = process.env.PORT || 7000;

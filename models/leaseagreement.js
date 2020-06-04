@@ -1,52 +1,40 @@
 const mongoose = require('mongoose');
 
 const leaseAgreementSchema = new mongoose.Schema({
-    agreementDate:{
-        type:Date,
-        required:true
+    
+    fullName:{
+        type:String
     },
-    startDate:{
-        type:Date,
-        required:true
+    email:{
+        type:String
     },
-    companyName:{
-        type:String,
-        required:true
+    address:{
+        type:String
     },
     street:{
         type:String
     },
+    zip:{
+        type:String
+    },
     state:{
-        type:String,
-        required:true
-    },
-    agreementNo:{
         type:String
     },
-    postCode:{
+    cardname:{
         type:String
     },
-    phone:{
+    cardnumber:{
         type:String
     },
-    furnitureName:{
+    expmonth:{
         type:String
     },
-    Quantity:{
+    expyear:{
         type:String
     },
-    carParking:{
-        type:String
-    },
-    totalMonthlyRate:{
-        type:String
-    },
-    securityDeposit:{
-        type:String
-    },
-    carParking:{
+    cvv:{
         type:String
     }
 });
 
-module.exports= mongoose.model('LeaseAgreement',leaseAgreementSchema);
+module.exports= mongoose.model('Agreement',leaseAgreementSchema);
